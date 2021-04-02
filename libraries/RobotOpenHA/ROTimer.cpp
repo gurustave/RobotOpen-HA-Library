@@ -25,6 +25,10 @@ void ROTimer::queue(unsigned int duration) {
 	_timerSet = true;
 }
 
+void ROTimer::cancel() {
+	_timerSet = false;
+}
+
 boolean ROTimer::ready() {
 	if ((millis() > _millisExpire) && _timerSet) {
 		_timerSet = false;
@@ -32,4 +36,8 @@ boolean ROTimer::ready() {
 	} else {
 		return false;
 	}
+}
+
+boolean ROTimer::isActive() {
+	return _timerSet;
 }

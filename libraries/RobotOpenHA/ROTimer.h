@@ -20,7 +20,9 @@ class ROTimer
     ROTimer();
 
     void queue(unsigned int);
+    void cancel();
     boolean ready();
+    boolean isActive();
     
   private:
     unsigned long _millisExpire;
